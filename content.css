@@ -1,0 +1,220 @@
+/*
+ * Anghami Ad Blocker — CSS-based instant ad hiding
+ *
+ * Injected at document_start, before JS runs.
+ * Hides known ad elements immediately to prevent flash of ad content.
+ */
+
+/* ═══════════════════════════════════════════════
+   ANGHAMI FIRST-PARTY ADS & PROMOTIONS
+   ═══════════════════════════════════════════════ */
+
+/* Native ad banner image (the exact element from the screenshot) */
+#native-ad-banner,
+img[id="native-ad-banner"],
+img[src*="anghnewads.anghcdn.co"],
+img[src*="PlusFeatures"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+/* "Remove Ads" upsell button */
+a[href*="remove-ads"],
+a[href*="removeads"],
+a[href*="upgrade"],
+a[href*="plus"],
+button[class*="remove-ads"],
+[class*="remove-ads"],
+[class*="removeAds"],
+[id*="remove-ads"],
+[id*="removeAds"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Anghami custom ad components and containers */
+anghami-ads,
+[class*="anghami-ad"],
+[class*="anghami-ads"],
+[id*="anghami-ad"],
+[id*="anghami-ads"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Anghami Plus / Eid / promotional banners */
+[class*="promo-banner"],
+[class*="promo-card"],
+[class*="upgrade-banner"],
+[class*="upgrade-card"],
+[class*="plus-banner"],
+[class*="plus-promo"],
+[class*="offer-banner"],
+[class*="offer-card"],
+[id*="promo-banner"],
+[id*="promo-card"],
+[id*="upgrade-banner"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Player leaderboard ad area */
+.player-leaderboard,
+[class*="player-leaderboard"],
+[id*="player-leaderboard"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Native ad video player */
+#native-ad-video,
+[id*="native-ad"],
+[class*="native-ad"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Angular modal popups used for ad/promo overlays */
+ngb-modal-window,
+ngb-modal-backdrop,
+.modal-backdrop {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Remove body scroll lock from ad modals */
+body.modal-open {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THIRD-PARTY AD ELEMENTS
+   ═══════════════════════════════════════════════ */
+
+/* Google ad iframes */
+iframe[name*="google_ads"],
+iframe[src*="googlead"],
+iframe[src*="doubleclick"],
+iframe[src*="googlesyndication"],
+iframe[src*="imasdk"],
+iframe[src*="anghcdn.co"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Generic ad containers */
+[class*="ad-container"],
+[class*="ad-wrapper"],
+[class*="ad-slot"],
+[class*="ad-banner"],
+[class*="ad-overlay"],
+[class*="ad-placement"],
+[class*="advert"],
+[id*="ad-container"],
+[id*="ad-wrapper"],
+[id*="ad-slot"],
+[id*="ad-banner"],
+[id*="ad-overlay"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Data-attribute ad markers */
+[data-ad],
+[data-ad-slot],
+[data-ad-unit],
+[data-adunit],
+[data-ads],
+[aria-label*="advertisement"],
+[aria-label*="sponsored"] {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Leaderboard / banner ads */
+[class*="leaderboard-ad"],
+[class*="banner-ad"],
+[id*="leaderboard-ad"],
+[id*="banner-ad"] {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Video ad elements */
+video[src*="ad"],
+video[class*="ad-video"],
+video[id*="ad-video"] {
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+}
+
+/* ═══════════════════════════════════════════════
+   LYRICS UNLOCK — exact Anghami selectors
+   ═══════════════════════════════════════════════ */
+
+/* Hide "Unlock full lyrics" button */
+.mini-lyrics-button {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Make lyrics container fully visible — no truncation */
+.mini-lyrics-holder {
+  max-height: none !important;
+  overflow-y: auto !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.mini-lyrics-holder .lyrics {
+  max-height: none !important;
+  overflow: visible !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* Injected full-lyrics styling — matches Anghami's own look */
+.anghami-full-lyrics-injected {
+  white-space: pre-wrap;
+  font-size: 1.25em;
+  line-height: 1.8;
+  color: #fff;
+  padding: 12px 0;
+  direction: auto;
+  text-align: center;
+}
+
+.anghami-full-lyrics-injected .lyrics-line {
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.anghami-full-lyrics-injected .lyrics-line:hover {
+  opacity: 1;
+}
